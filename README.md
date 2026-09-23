@@ -6,3 +6,12 @@ Proyecto Arquitectura de computadores parte 1
 cd assembler
 python assemble.py game.s game.hex
 ```
+
+
+pa subir al README, Wille
+```bash
+cd C:\Users\wille\Proyecto2
+git add assembler pochoco_soc-main
+git commit -m "un mensaje"
+git push
+```
