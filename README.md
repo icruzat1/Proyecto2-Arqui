@@ -1,5 +1,5 @@
-# Proyecto-Arqui
-# Proyecto 2 — Juego de reflejos
+
+# Proyecto 2 
 
 Grupo: Ignacio Cruzat, Juan Vicente Celedón, Wille Saarenpaa
 
