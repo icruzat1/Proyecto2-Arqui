@@ -23,3 +23,13 @@ Enchufar el micro-USB. No hace falta terminal ni PC con herramientas.
 cd C:\Users\wille\Proyecto2\assembler
 python assemble.py game.s game.hex
 copy game.hex C:\Users\wille\Proyecto2\pochoco_soc-main\sw\game.hex
+´´´
+
+cd C:\Users\wille\Proyecto2
+git pull
+git add assembler pochoco_soc-main
+git commit -m "mensaje"
+git push
+
+
+
