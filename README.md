@@ -33,3 +33,21 @@ git commit -m "mensaje"
 git push
 ```
 
+## Grabar de nuevo
+
+Se ocupa si se cambió una constante del juego, se regeneró `game.hex`, o se tocó un `.v`.
+Si la placa ya está grabada y solo se quiere jugar, no hace falta: enchufar el USB.
+
+La ventana negra es la de OSS CAD (`start`), no la de VS Code.
+En esta PC `make` no existe. Placa enchufada antes del `iceprog`.
+
+```bat
+set "PATH=C:\Users\wille\OneDrive\Escritorio\Universidad\ARQUITECTURA DE COMPUTADORES\herramientas github oss cad\oss-cad-suite\bin;C:\Users\wille\OneDrive\Escritorio\Universidad\ARQUITECTURA DE COMPUTADORES\herramientas github oss cad\oss-cad-suite\lib;%PATH%"
+cd C:\Users\wille\Proyecto2\pochoco_soc-main
+yosys -p "read_verilog rtl/game_top.v rtl/pochoco_periph.v rtl/pochoco_ram.v rtl/pochoco_soc.v rtl/pochoco_spi_slave.v rtl/espino_core/espino_alu.v rtl/espino_core/espino_controller.v rtl/espino_core/espino_core.v rtl/espino_core/espino_decoder.v rtl/espino_core/espino_id_stage.v rtl/espino_core/espino_if_stage.v rtl/espino_core/espino_load_store_unit.v rtl/espino_core/espino_register_file.v; synth_ice40 -top game_top -json game_top.json; stat"
+nextpnr-ice40 --hx1k --package vq100 --json game_top.json --pcf goboard.pcf --asc game_top.asc
+icepack game_top.asc game_top.bin
+iceprog game_top.bin
+```
+
+
