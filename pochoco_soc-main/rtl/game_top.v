@@ -15,7 +15,7 @@ module game_top (
 );
 
   pochoco_soc #(
-    .MemFile("sw/game.hex")
+    .MemFile("C:/Users/wille/Proyecto2/pochoco_soc-main/sw/game.hex")
   ) u_pochoco (
     .i_Clk(i_Clk),
     .o_LED(o_LED),
