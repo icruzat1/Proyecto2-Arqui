@@ -62,6 +62,8 @@ cd C:\Users\wille\Proyecto2\assembler
 python assemble.py game.s game.hex
 copy game.hex C:\Users\wille\Proyecto2\pochoco_soc-main\sw\game.hex
 ```
+Esto regenera game.hex desde game.s si es que en algún momento se cambia el codigo del juego.
+
 ### Subir cambios a github desde VScode
 ```bat
 cd C:\Users\wille\Proyecto2
