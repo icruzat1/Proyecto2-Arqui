@@ -19,7 +19,7 @@ Enchufar el micro-USB. No hace falta terminal ni PC con herramientas.
 
 ## ¿Cómo jugar?
 
-Ventana negra, placa ya enchufada. Uno por uno.
+Ventana negra (aplicación start del archivo de oss-cad-build), placa ya enchufada. Uno por uno.
 
 La ventana es: Escritorio > Universidad > Arquitectura de computadores > herramientas GitHub oss cad > oss-cad-suite > start
 
