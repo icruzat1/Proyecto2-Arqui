@@ -62,7 +62,7 @@ cd C:\Users\wille\Proyecto2\assembler
 python assemble.py game.s game.hex
 copy game.hex C:\Users\wille\Proyecto2\pochoco_soc-main\sw\game.hex
 ```
-### Subir cambios
+### Subir cambios a github desde VScode
 ```bat
 cd C:\Users\wille\Proyecto2
 git pull
