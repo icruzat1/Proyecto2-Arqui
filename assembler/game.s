@@ -12,6 +12,10 @@
 
 _start:
     lui  x2, 0x80000
+    addi x2, x2, 4
+    addi x1, x0, 15
+    sw   x1, 0(x2)
+    addi x2, x2, -4
     addi x10, x0, 0
     addi x11, x0, 1
     addi x12, x0, 0
@@ -23,7 +27,6 @@ round:
     addi x1, x0, 15
     sw   x1, 4(x2)
 
-    
     lw   x7, 12(x2)
     lui  x9, 0x4786
     addi x9, x9, 0x7FF
@@ -33,7 +36,6 @@ wait3:
     addi x11, x11, 1
     lw   x7, 12(x2)
     blt  x7, x8, wait3
-    //
 
     andi x4, x11, 3
     addi x13, x0, 1
@@ -49,9 +51,7 @@ wait3:
 show_led:
     sw   x13, 4(x2)
 
-    // arranca medicion
     lw   x7, 12(x2)
-    //
 
 wait_press:
     addi x11, x11, 1
@@ -59,7 +59,6 @@ wait_press:
     beq  x14, x0, wait_press
     bne  x14, x13, wrong
 
-    // ciclos -> decimas ( / 2 500 000 )
     lw   x8, 12(x2)
     sub  x8, x8, x7
     lui  x9, 0x262
@@ -76,7 +75,6 @@ div_d:
     addi x15, x0, 99
 nocap:
     add  x12, x12, x15
-    //
 
     addi x3, x0, 0
     addi x4, x15, 0
@@ -112,7 +110,6 @@ wait_rel_b:
     jal  x0, round
 
 done:
-    // promedio = suma / 10
     addi x15, x0, 0
     addi x8, x12, 0
     addi x9, x0, 10
@@ -122,7 +119,6 @@ avg:
     addi x15, x15, 1
     jal  x0, avg
 avg_d:
-    //
     addi x3, x0, 0
     addi x4, x15, 0
     addi x5, x0, 10
@@ -140,3 +136,4 @@ bcd2d:
     sw   x1, 0(x2)
 hang:
     jal  x0, hang
+    
