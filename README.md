@@ -31,13 +31,29 @@ Paso 2.
 ```bat
 cd C:\Users\wille\Proyecto2\pochoco_soc-main
 ```
+
 Paso 3.
+```bat
+copy /Y C:\Users\wille\Proyecto2\assembler\ledtest.hex sw\game.hex
+```
+Tiene que decir 1 archivo(s) copiado(s).
+
+Paso 4.
+
+```bat
+yosys -p "read_verilog rtl/game_top.v rtl/pochoco_periph.v rtl/pochoco_ram.v rtl/pochoco_soc.v rtl/pochoco_spi_slave.v rtl/espino_core/espino_alu.v rtl/espino_core/espino_controller.v rtl/espino_core/espino_core.v rtl/espino_core/espino_decoder.v rtl/espino_core/espino_id_stage.v rtl/espino_core/espino_if_stage.v rtl/espino_core/espino_load_store_unit.v rtl/espino_core/espino_register_file.v; synth_ice40 -top game_top -json game_top.json; stat"
+nextpnr-ice40 --hx1k --package vq100 --json game_top.json --pcf goboard.pcf --asc game_top.asc
+icepack game_top.asc game_top.bin
+iceprog game_top.bin
+```
+
+Paso 5.
 ```bat
 copy /Y C:\Users\wille\Proyecto2\assembler\game.hex sw\game.hex
 ```
 Tiene que decir 1 archivo(s) copiado(s).
 
-Paso 4.
+Paso 6.
 
 ```bat
 yosys -p "read_verilog rtl/game_top.v rtl/pochoco_periph.v rtl/pochoco_ram.v rtl/pochoco_soc.v rtl/pochoco_spi_slave.v rtl/espino_core/espino_alu.v rtl/espino_core/espino_controller.v rtl/espino_core/espino_core.v rtl/espino_core/espino_decoder.v rtl/espino_core/espino_id_stage.v rtl/espino_core/espino_if_stage.v rtl/espino_core/espino_load_store_unit.v rtl/espino_core/espino_register_file.v; synth_ice40 -top game_top -json game_top.json; stat"
