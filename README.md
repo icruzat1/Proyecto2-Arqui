@@ -106,4 +106,18 @@ icepack game_top.asc game_top.bin
 iceprog game_top.bin
 ```
 
+## Archivos principales
+
+| Archivo | Qué hace |
+|---------|----------|
+| `assembler/game.s` | El juego en assembly. Acá está la lógica (espera, LED al azar, medición, promedio, EE). |
+| `assembler/assemble.py` | Traduce `game.s` a `game.hex`. Se corre cuando se cambia el juego. |
+| `assembler/game.hex` | El programa ya traducido. Este es el que se mete en el chip. |
+| `pochoco_soc-main/rtl/game_top.v` | Le dice al SoC que cargue `sw/game.hex` al arrancar. |
+| `pochoco_soc-main/rtl/pochoco_*.v` | El procesador (SoC Pochoco) que viene dado. Corre el programa. |
+| `pochoco_soc-main/goboard.pcf` | Mapa de pines de la Go Board (LED, botones, display). |
+| `pochoco_soc-main/sw/game.hex` | Copia del hex que usa la síntesis. |
+
+
+
 
