@@ -17,7 +17,7 @@ Enchufar el micro-USB. No hace falta terminal ni PC con herramientas.
 - A los 10 aciertos el display se queda en el promedio y no hay LED.
 - Desenchufar borra el juego. Para jugar de nuevo hay que volver a grabar (pasos 3 a 6).
 
-## ¿Cómo jugar?
+## ¿Cómo jugar? (Ejemplo de ejecución en el computador de uno de los integrantes)
 
 Ventana negra (aplicación start del archivo de oss-cad-build), placa ya enchufada. Uno por uno.
 
